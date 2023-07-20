@@ -1,6 +1,6 @@
 # TODO: Change the name of the org 
 org: nguyenxuanminh1
-app: serverless-minh
+app: serverless-todo-app
 service: serverless-todo-app
 frameworkVersion: '3'
 
@@ -15,7 +15,7 @@ provider:
   name: aws
   runtime: nodejs14.x
   lambdaHashingVersion: '20201221'
-
+  profile: 'serverless'
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
 
@@ -28,9 +28,9 @@ provider:
   environment:
     TODOS_TABLE: Todos-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
-    ATTACHMENT_S3_BUCKET: cuongnv98-serverless-c4-todo-images-${self:provider.stage}
+    ATTACHMENT_S3_BUCKET: minhnx-serverless-c4-todo-images-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
-    AUTH_0_SECRET_ID: a_E6j1llwME1ew9TGt75-a3HgWHfklF4ZOMdais2OKhx-f7ORDm3WhGcrS7_QK5H
+    AUTH_0_SECRET_ID: 0CD8p_VEB9nSYpClpIOIM9kw_-VaZVeWKju8xa-r8bw63WdpbWLFJVLVQ76ItK7z
       
   logs:
     # Enable API Gateway logs
